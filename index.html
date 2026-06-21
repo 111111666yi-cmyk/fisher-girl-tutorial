@@ -126,7 +126,9 @@ img{max-width:100%;display:block}
 .pc{width:24px;height:24px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:.2s;flex-shrink:0}
 .pc:hover{transform:scale(1.15)}.pc.active{border-color:#1a2a33;box-shadow:0 0 0 2px #fff,0 0 0 4px #1a2a33}
 .pad-canvas-wrap{padding:8px;background:#fff}
-.pad-canvas-wrap canvas{width:100%;height:300px;border:1px solid #eee;border-radius:6px;cursor:crosshair;touch-action:none;background:#fff}
+.pad-canvas-wrap canvas{width:100%;height:300px;border:1px solid #eee;border-radius:6px;cursor:crosshair;touch-action:none;background:#fff;background-size:contain;background-position:center;background-repeat:no-repeat}
+.pad-ref{display:inline-flex;align-items:center;gap:4px;font-size:11px;color:#888;cursor:pointer;white-space:nowrap}
+.pad-ref input{accent-color:#cf9a36;width:14px;height:14px}
 
 /* Palette grid for Ch10 */
 .palette-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(85px,1fr));gap:6px;margin:10px 0}
@@ -283,7 +285,7 @@ img{max-width:100%;display:block}
 <li>从<b>耳后</b>落颈线,连到颈窝</li>
 <li>颈窝向左右<b>展开锁骨</b>,最后盖领口</li></ol></div></div>
 <div class="check"><b>检查:</b> 擦掉衣领,肩和胸腔还能独立成立; 拿掉头,脖子仍从耳后落到锁骨。</div>
-<div class="drawpad" id="pad2">
+<div class="drawpad" id="pad2" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -293,6 +295,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -352,7 +356,7 @@ img{max-width:100%;display:block}
 <li>画<b>中心线</b>,锁死朝向</li><li>画<b>眼线</b>,跟着头倾斜</li>
 <li>头发<b>一层层套</b>到头骨外</li></ol></div></div>
 <div class="check"><b>检查:</b> 遮掉头发,头仍看得出往哪转; 两眼宽窄、两侧脸宽不再相同。</div>
-<div class="drawpad" id="pad3">
+<div class="drawpad" id="pad3" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -362,6 +366,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -409,7 +415,7 @@ img{max-width:100%;display:block}
 <li>更低位置放<b>颈窝+锁骨</b></li>
 <li>最后才<b>盖领口</b></li></ol></div></div>
 <div class="check"><b>检查:</b> 隐藏衣领后,还能清楚分出下巴、脖子、锁骨三层。</div>
-<div class="drawpad" id="pad4">
+<div class="drawpad" id="pad4" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -419,6 +425,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -465,7 +473,7 @@ img{max-width:100%;display:block}
 <li>点出<b>鼻底</b>位置</li><li>放<b>嘴</b>的位置和宽度</li>
 <li>最后修两眼<b>大小和倾斜</b></li></ol></div></div>
 <div class="check"><b>检查:</b> 去掉睫毛和高光后,五官依然立得住、不散。</div>
-<div class="drawpad" id="pad5">
+<div class="drawpad" id="pad5" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -475,6 +483,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -533,7 +543,7 @@ img{max-width:100%;display:block}
 <ol class="steps"><li>画<b>眼球圆体</b>(一个球)</li><li><b>上下眼睑</b>包住眼球</li>
 <li>定两眼<b>宽窄差</b>(近宽远窄)</li><li>最后加<b>睫毛/眼角/装饰</b></li></ol></div></div>
 <div class="check"><b>检查:</b> 只留眼球和眼睑,眼睛已有体积,不靠睫毛撑。</div>
-<div class="drawpad" id="pad6">
+<div class="drawpad" id="pad6" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -543,6 +553,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -602,7 +614,7 @@ img{max-width:100%;display:block}
 <li>定<b>前后遮挡</b></li><li>大块拆成<b>2-3束</b></li>
 <li>最后补<b>零碎卷发</b></li></ol></div></div>
 <div class="check"><b>检查:</b> 擦掉碎发,只留大轮廓时发型仍成立。</div>
-<div class="drawpad" id="pad7">
+<div class="drawpad" id="pad7" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -612,6 +624,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -657,7 +671,7 @@ img{max-width:100%;display:block}
 <ol class="steps"><li>画<b>身体中线</b></li><li>定<b>领口交点</b>,沿胸腔弧包</li>
 <li>挂饰<b>挂在交点/前片</b></li><li>最后决定<b>袖口/腋下</b>结构</li></ol></div></div>
 <div class="check"><b>检查:</b> 遮掉花纹和饰品,衣服大形仍成立。</div>
-<div class="drawpad" id="pad8">
+<div class="drawpad" id="pad8" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -667,6 +681,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -709,7 +725,7 @@ img{max-width:100%;display:block}
 <li>先重搭<b>头＋胸腔盒</b>(Ch02-03)</li><li>补<b>颈部、肩线、领口</b>(Ch04)</li>
 <li>放回<b>五官位置</b>(Ch05)</li><li>最后放<b>头发大块</b>(Ch07)</li></ol></div>
 <div class="check"><b>检查:</b> 新稿每一笔都比旧稿更少、更准。</div>
-<div class="drawpad" id="pad9">
+<div class="drawpad" id="pad9" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -719,6 +735,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#888888" style="background:#888888" title="灰线"></span>
@@ -746,7 +764,7 @@ img{max-width:100%;display:block}
 <li>肤色<b>通透</b>、带暖红血色感</li>
 <li>背景加<b>气泡/星点/光斑</b>装饰</li></ol></div></div>
 <div class="check"><b>检查:</b> 配色一眼是渔女(暖金+海蓝),但质感是粉甜那种通透甜。</div>
-<div class="drawpad" id="pad10">
+<div class="drawpad" id="pad10" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -756,6 +774,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#E3B85C" style="background:#E3B85C" title="暖金"></span>
@@ -807,7 +827,7 @@ img{max-width:100%;display:block}
 <li>加<b>明暗交界线</b>(转折)</li><li>补<b>反光、投影</b></li>
 <li>最后点<b>高光</b></li></ol></div></div>
 <div class="check"><b>检查:</b> 眯眼看,整张只有亮区/暗区两块分开。</div>
-<div class="drawpad" id="pad11">
+<div class="drawpad" id="pad11" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -817,6 +837,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#E3B85C" style="background:#E3B85C" title="暖金"></span>
@@ -859,7 +881,7 @@ img{max-width:100%;display:block}
 <li><b>二分明暗</b>(受光/背光两大面)</li><li><b>三分转折</b>(加明暗交界线)</li>
 <li><b>局部亮点</b>(反光、投影、高光)</li><li><b>细化</b>(睫毛、发丝、饰品质感)</li></ol></div>
 <div class="check"><b>检查:</b> 每一步都能独立停下来看。</div>
-<div class="drawpad" id="pad12">
+<div class="drawpad" id="pad12" data-ref="sketch">
   <div class="pad-head">练习画板 <span class="pad-hint">在下方画布上练习本章内容</span></div>
   <div class="pad-toolbar">
     <button class="pt active" data-tool="pen">画笔</button>
@@ -869,6 +891,8 @@ img{max-width:100%;display:block}
     <button class="pt" data-tool="clear">清空</button>
     <span class="pad-sep"></span>
     <label class="pad-size">粗细 <input type="range" class="size-slider" min="1" max="25" value="3"></label>
+    <span class="pad-sep"></span>
+    <label class="pad-ref"><input type="checkbox" class="ref-toggle"> 参考图</label>
   </div>
   <div class="pad-colors"><span class="pc active" data-color="#333333" style="background:#333333" title="黑线"></span>
 <span class="pc" data-color="#E3B85C" style="background:#E3B85C" title="暖金"></span>
@@ -1042,6 +1066,23 @@ document.querySelectorAll('.drawpad').forEach(function(wrap) {
   // Size
   var slider = wrap.querySelector('.size-slider');
   if (slider) slider.addEventListener('input', function() { lineWidth = parseInt(slider.value); });
+
+  // Reference image toggle
+  var refToggle = wrap.querySelector('.ref-toggle');
+  if (refToggle) {
+    var refType = wrap.dataset.ref || 'sketch';
+    var refImgMap = { sketch: 2, original: 1, style: 3 };
+    var refCard = document.querySelector('.ref-card:nth-child(' + (refImgMap[refType] || 2) + ') img');
+    var refSrc = refCard ? refCard.src : null;
+    refToggle.addEventListener('change', function() {
+      if (refToggle.checked && refSrc) {
+        canvas.style.backgroundImage = 'linear-gradient(rgba(255,255,255,.6),rgba(255,255,255,.6)), url(' + refSrc + ')';
+      } else {
+        canvas.style.backgroundImage = 'none';
+        canvas.style.background = '#fff';
+      }
+    });
+  }
 
   // Init
   setTimeout(function() { resize(); saveState(); }, 100);
