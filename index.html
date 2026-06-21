@@ -139,6 +139,8 @@ img{max-width:100%;display:block}
 @keyframes fadeUp{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{opacity:0;transform:translateY(25px);transition:opacity .5s ease,transform .5s ease}
 .fade-up.visible{opacity:1;transform:translateY(0)}
+@keyframes forceShow{to{opacity:1;transform:none}}
+.fade-up{animation:forceShow 0s 2s forwards}
 
 /* Responsive */
 @media(max-width:640px){
@@ -882,6 +884,7 @@ img{max-width:100%;display:block}
 </div>
 </div></section></div>
 <script>
+try {
 // Annotation toggle
 function annoToggle(id, view) {
   var w = document.getElementById(id);
@@ -1083,6 +1086,7 @@ var navObs = new IntersectionObserver(function(entries) {
   });
 }, { threshold: 0.25 });
 document.querySelectorAll('.ch[id]').forEach(function(s) { navObs.observe(s); });
+} catch(e) { console.error('Tutorial JS error:', e); document.querySelectorAll('.fade-up').forEach(function(el){ el.style.opacity='1'; el.style.transform='none'; }); }
 </script>
 </body>
 </html>
